@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Funciones</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+        .container{
+            display: grid;
+            /* grid-template: 300px 100px 100px / 50% 25% 15%; */
+            /*fr división en partes iguales*/
+            /* grid-template: 300px 100px 100px / 1fr 1fr 1fr; */
+            /* grid-template: 300px 100px 100px / auto auto auto; */
+            /* grid-template: 300px 100px 100px / repeat(4, 1fr);  */
+            /* grid-template: 300px 100px 100px / repeat(4, minmax(100px,1fr));  */
+            grid-template: 300px 100px 100px / minmax(100px,1fr) repeat(4, 1fr); 
+            grid-gap: 10px;
+        }
+        .item {
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+            
+        }
+        .item:nth-of-type(4){ /*Coger el cuarto item de los que tengan esa class*/
+            background: blue;
+            overflow: auto;
+            display: grid;
+            grid-template: 50px 50px 50px / 50% 20% 30%;            
+        }
+        .item .item {
+            background: yellow;            
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item">Item # 1</div>
+        <div class="item">Item # 2</div>
+        <div class="item">Item # 3</div>
+        <div class="item">
+                <div class="item">Item # 1</div>
+                <div class="item">Item # 2</div>
+                <div class="item">Item # 3</div>
+                <div class="item">Item # 4</div>
+                <div class="item">Item # 5</div>
+                <div class="item">Item # 6</div>
+                <div class="item">Item # 7</div>
+                <div class="item">Item # 8</div>
+        </div>
+        <div class="item">Item # 5</div>
+        <div class="item">Item # 6</div>
+        <div class="item">Item # 7</div>
+        <div class="item">Item # 8</div>
+        <div class="item">Item # 9</div>
+        <div class="item">Item # 10</div>
+        <div class="item">Item # 11</div>
+        <div class="item">Item # 12</div>
+    </section>
+</body>
+</html>
